@@ -26,3 +26,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 "# Angular-demo" 
+
+
+# Assignment:-
+1. Create a component ('employee') and 5 objects in .ts file with following fields. Then display using table format.
+Fields are: 
+empId, empName, gender, salary, DOJ (date of Joining), loginId, password.
+
+2. Create a component ('register') with a form of all above employee fields. After submit details the values should be displayed in console as JSON object.

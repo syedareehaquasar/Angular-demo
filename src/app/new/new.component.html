@@ -12,9 +12,17 @@
   <ul>
     <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
   </ul>
+
+  <h3>Your Address is: </h3>
+  DoorNo: {{person.Address.DoorNo}}
+  street: {{person.Address.street}}
+  <br/>
+
   <!-- () -> event binding
   [] -> property binding -->
   Enter text here: <input type="text" [(ngModel)] = "message" > <br/>
 {{message}}
 
 </section>
+
+<button (click) = "showMessage()">Click Me</button>
