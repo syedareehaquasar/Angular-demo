@@ -7,17 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewComponent implements OnInit {
 
-  name: string;
-  age: number;
-  salary: number;
-  isMarried: boolean;
+  person : any;
+  hobbies: any;
+  message: string;
 
   constructor() {
     // variables initialization
-    this.name = "Reeha";
-    this.age = 20;
-    this.salary = 2000000;
-    this.isMarried = false;
+    this.message = "";
+    this.person = {name: "Reeha", age: 20, salary: 2000000, isMarried: false}
+    this.hobbies = ["Singing", "Playing", "apple", 1];
     console.log('This is a constructor!!');
    }// special method which executes automatically when object is created
    // dependency injection

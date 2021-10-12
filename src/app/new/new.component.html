@@ -1,4 +1,20 @@
 <h1>new Comp</h1>
 <p>new works!</p>
 
-Your name is: {{name}} <br/> Your age is: {{age}} <br/> Your salary is: {{salary}} <br/> your marital status is: {{isMarried}} <br/>
+<section>
+  Your name is: {{ person.name }} <br />
+  Your age is: {{ person.age }} <br />
+  Your salary is: {{ person.salary }} <br />
+  your marital status is: {{ person.isMarried }} <br />
+  Your Hobbies are: <br />
+
+  <!-- ngFor Directive(tag)-->
+  <ul>
+    <li *ngFor="let hobby of hobbies">{{ hobby }}</li>
+  </ul>
+  <!-- () -> event binding
+  [] -> property binding -->
+  Enter text here: <input type="text" [(ngModel)] = "message" > <br/>
+{{message}}
+
+</section>
