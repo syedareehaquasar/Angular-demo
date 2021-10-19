@@ -1,3 +1,23 @@
-<p>employee works!</p>
+<p>employee Table</p>
 
 <!-- Make table of contents -->
+<table border="2" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Salary</th>
+    <th>Date of Joining</th>
+    <th>loginId</th>
+    <th>Password</th>
+  </tr>
+  <tr *ngFor="let employee of employees">
+    <td>{{ employee.id }}</td>
+    <td>{{ employee.name }}</td>
+    <td>{{ employee.gender | uppercase }}</td>
+    <td>{{ employee.salary | currency: "INR" }}</td>
+    <td>{{ employee.DOJ | date: "dd-MM-yyyy" }}</td>
+    <td>{{ employee.loginId }}</td>
+    <td>{{ employee.password }}</td>
+  </tr>
+</table>
