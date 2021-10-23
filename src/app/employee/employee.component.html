@@ -1,8 +1,8 @@
 <p>employee Table</p>
 
 <!-- Make table of contents -->
-<table border="2" align="center">
-  <tr>
+<table align="center">
+  <!-- <tr>
     <th>ID</th>
     <th>Name</th>
     <th>Gender</th>
@@ -10,14 +10,19 @@
     <th>Date of Joining</th>
     <th>loginId</th>
     <th>Password</th>
-  </tr>
-  <tr *ngFor="let employee of employees">
-    <td>{{ employee.id }}</td>
-    <td>{{ employee.name }}</td>
-    <td>{{ employee.gender | uppercase }}</td>
-    <td>{{ employee.salary | currency: "INR" }}</td>
-    <td>{{ employee.DOJ | date: "dd-MM-yyyy" }}</td>
-    <td>{{ employee.loginId }}</td>
-    <td>{{ employee.password }}</td>
+  </tr> -->
+  <th *ngFor="let header of headers">{{header}}</th>
+    <th>Experience</th>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee["empId"]}}</td>
+      <td>{{employee["empName"] | gender: employee["gender"] | uppercase}}</td>
+      <td>{{employee["gender"] | lowercase}}</td>
+      <td>{{employee["salary"] | currency: 'INR'}}</td>
+      <td>{{employee["doj"] | date: 'dd-MMMM-yyyy'}}</td> <!-- MM for digit of months, MMM for 3 chars of months, MMMM for complete month name -->
+      <td>{{employee["mobile"] | countryCode: employee["country"]}}</td>
+      <td>{{employee["country"]}}</td>
+      <td>{{employee["loginId"]}}</td>
+      <td>{{employee["password"]}}</td>
+      <td>{{employee["doj"] | expr}}</td> <!-- Refer expr.pipe.ts -->
   </tr>
 </table>

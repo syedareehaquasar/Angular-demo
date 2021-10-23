@@ -27,4 +27,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  loginSubmit1(loginForm: any) {
+    alert("loginForm executing...");
+    console.log(loginForm);
+  }
+
 }

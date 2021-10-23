@@ -1,5 +1,40 @@
 <p>login works!</p>
 
-Enter loginId <input type="text" [(ngModel)] = "loginId"> <br/>
+<!-- here it is simontaneous data binding-->
+<!-- Enter loginId <input type="text" [(ngModel)] = "loginId"> <br/>
 Enter password <input type="password"[(ngModel)] = "password"> <br/>
-<button (click) = "loginSubmit()">Submit</button>
+<button (click) = "loginSubmit()">Submit</button> -->
+
+
+<!-- Enter login id <input type = "text" [(ngModel)] = 'loginId'><br/>
+Enter password <input type = "password" [(ngModel)] = 'password'><br/>
+<button (click) = 'loginSubmit()'>Login</button> -->
+
+
+<!-- #loginForm is a reference to this form -->
+<!-- when button inside the form is pressed, loginForm() is fired -->
+<!--
+    reference and method name should be different i.e.
+    #loginForm and loginSubmit2()
+-->
+<!--
+    name attribute gives the name of the property, i.e.
+    #loginForm object has 2 properties names loginId and password
+    loginForm = {loginId: 'XXXXX', password: 'XXX'}
+-->
+
+<!--
+    loginId is used in backend while #loginId is used in html
+ -->
+ <form #loginForm = "ngForm" (ngSubmit) = "loginSubmit1(loginForm)" novalidate>
+  Enter login id <input type = "text" name = "loginId" ngModel #loginId = ngModel required minlength="2" maxlength="10"><br/>
+  Enter password <input type = "password" name = "password" ngModel #password = ngModel required minlength="2" maxlength="10"><br/>
+  <button [disabled] = "!loginForm.valid">Login</button>
+</form>
+
+<div>
+  <div *ngIf = "loginId.errors?.required && loginId.touched">Please enter your login id</div>
+  <div *ngIf = "password.errors?.required && password.touched">Please enter the password</div>
+  <div *ngIf = "loginId.errors?.minlength && loginId.touched">Please enter minimum 2 chars in the loginId</div>
+  <div *ngIf = "password.errors?.minlength && password.touched">Please enter minimum 2 chars in the password</div>
+</div>

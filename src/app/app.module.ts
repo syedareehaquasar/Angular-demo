@@ -8,6 +8,10 @@ import { NewComponent } from './new/new.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ResgisterComponent } from './resgister/resgister.component';
+import { HeaderComponent } from './header/header.component';
+import { ExprPipe } from './expr.pipe';
+import { GenderPipe } from './gender.pipe';
+import { CountryCodePipe } from './country-code.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import { ResgisterComponent } from './resgister/resgister.component';
     NewComponent,
     LoginComponent,
     EmployeeComponent,
-    ResgisterComponent
+    ResgisterComponent,
+    HeaderComponent,
+    ExprPipe,
+    GenderPipe,
+    CountryCodePipe
   ],
   imports: [
     BrowserModule,

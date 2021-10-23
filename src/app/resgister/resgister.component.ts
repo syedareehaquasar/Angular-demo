@@ -7,19 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResgisterComponent implements OnInit {
 
-  employees: any;
-  loginId: String;
-  password: String;
+  user: any;
+  loginId: any;
+  password: any;
 
   constructor() {
-    this.loginId = "";
-    this.password = "";
-    this.employees = [
-
-    ]
+    this.user = {
+      empId: "",
+      empName: "",
+      gender: "",
+      salary: "",
+      doj: "",
+      loginId: "",
+      password: ""
+    };
   }
 
   ngOnInit(): void {
+  }
+
+  submit(): void {
+    console.log(this.user);
   }
 
   loginSubmit(): void {
@@ -27,7 +35,7 @@ export class ResgisterComponent implements OnInit {
     if (this.loginId === 'HR' && this.password === 'HR') {
       alert(' Welcome to HR Home Page... ');
     } else {
-      this.employees.array.forEach((employee: any) => {
+      this.user.array.forEach((employee: any) => {
         if ((this.loginId === employee.email) && (this.password === employee.password)) {
           alert(' Welcome to Employee Home Page... ');
         } else {
