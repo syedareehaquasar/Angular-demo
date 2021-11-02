@@ -1,12 +1,50 @@
-<p>resgister works!</p>
+<div class="form-container">
+  <h1> Employee Registration </h1>
+  <div class="form-group col-sm-3">
+      <label for="exampleInputemployeeid" class="form-label mt-4">Employee Id</label>
+      <input type="text" class="form-control" id="exampleInputemployeeid" [(ngModel)]='user.empId' name="text"
+          required placeholder="Employee Id">
+  </div>
 
-Enter the following details : <br />
-ID <input type = "text" [(ngModel)] = 'user.empId'><br/>
-Name <input type = "text" [(ngModel)] = 'user.empName'><br/>
-Gender <input type = "text" [(ngModel)] = 'user.gender'><br/>
-Salary <input type = "text" [(ngModel)] = 'user.salary'><br/>
-Date of joining <input type = "text" [(ngModel)] = 'user.doj'><br/>
-Login ID <input type = "text" [(ngModel)] = 'user.loginId'><br/>
-Password <input type = "text" [(ngModel)] = 'user.password'><br/>
+  <div class="form-group col-sm-3">
+      <label for="exampleInputemployeename" class="form-label mt-4">Employee Name</label>
+      <input type="text" class="form-control" id="exampleInputemployeename" [(ngModel)]='user.empName' name="text"
+          required placeholder="Employee Name">
+  </div>
 
-<button (click) = 'submit()'>Submit</button>
+  <div class="form-group col-sm-3">
+      <label for="exampleGender" class="form-label mt-4">Gender</label>
+      <select class="form-select" id="exampleGender" [(ngModel)]='user.gender'>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+      </select>
+  </div>
+
+  <div class="form-group col-sm-3">
+      <label for="exampleInputemployeesalary" class="form-label mt-4">Salary</label>
+      <input type="number" class="form-control" id="exampleInputemployeesalary" [(ngModel)]='user.salary'
+          placeholder="00">
+  </div>
+
+  <div class="form-group col-sm-3">
+      <label for="exampleInputemployeedoj" class="form-label mt-4">Date of Joining</label>
+      <input type="date" class="form-control" id="exampleInputemployeedoj" [(ngModel)]='user.doj'
+          placeholder="MM/DD/YYYY">
+  </div>
+
+  <div class="form-group col-sm-3">
+      <label for="exampleInputloginid1" class="form-label mt-4">Login Id</label>
+      <input type="text" class="form-control" id="exampleInputloginid1" [(ngModel)]='user.loginId' name="text"
+          required placeholder="Login Id">
+  </div>
+
+  <div class="form-group col-sm-3">
+      <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]='user.password'
+          name="password" required minlength="2" maxlength="10" placeholder="Password">
+  </div>
+
+  <div class="d-grid gap-2 mt-4">
+      <button class="btn btn-lg btn-primary" type="button" (click)='submit()'>Submit</button>
+  </div>
+</div>

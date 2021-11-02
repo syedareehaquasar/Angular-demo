@@ -12,6 +12,24 @@ import { HeaderComponent } from './header/header.component';
 import { ExprPipe } from './expr.pipe';
 import { GenderPipe } from './gender.pipe';
 import { CountryCodePipe } from './country-code.pipe';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductComponent } from './product/product.component';
+import { HrpageComponent } from './hrpage/hrpage.component';
+
+const appRoot: Routes = [
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: ResgisterComponent },
+  { path: 'products', component: ProductComponent },
+  { path: 'employees', component: EmployeeComponent },
+  {
+    path: 'hrpage',
+    children: [
+      { path: '', component: HrpageComponent },
+      { path: 'register', component: ResgisterComponent },
+    ],
+  },
+];
 
 @NgModule({
   declarations: [
@@ -23,14 +41,17 @@ import { CountryCodePipe } from './country-code.pipe';
     HeaderComponent,
     ExprPipe,
     GenderPipe,
-    CountryCodePipe
+    CountryCodePipe,
+    ProductComponent,
+    HrpageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoot),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -26,7 +26,7 @@ Enter password <input type = "password" [(ngModel)] = 'password'><br/>
 <!--
     loginId is used in backend while #loginId is used in html
  -->
- <form #loginForm = "ngForm" (ngSubmit) = "loginSubmit1(loginForm)" novalidate>
+ <form #loginForm = "ngForm" (ngSubmit) = "loginSubmit1(loginForm.value)" novalidate>
   Enter login id <input type = "text" name = "loginId" ngModel #loginId = ngModel required minlength="2" maxlength="10"><br/>
   Enter password <input type = "password" name = "password" ngModel #password = ngModel required minlength="2" maxlength="10"><br/>
   <button [disabled] = "!loginForm.valid">Login</button>

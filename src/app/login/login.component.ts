@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   loginId: String;
   password: String;
 
-  constructor() {
+  constructor(private router: Router) {
     this.loginId = "";
     this.password = "";
    }
@@ -30,6 +31,11 @@ export class LoginComponent implements OnInit {
   loginSubmit1(loginForm: any) {
     alert("loginForm executing...");
     console.log(loginForm);
+    if (loginForm.loginId === 'HR' && loginForm.password === 'HR') {
+      this.router.navigate(['hrpage']);
+    } else {
+      alert("Login failure");
+    }
   }
 
 }
